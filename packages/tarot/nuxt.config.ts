@@ -7,4 +7,7 @@ postcss: {
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+      API_KEY: process.env.OPENAI_API_KEY,
+},
 })
