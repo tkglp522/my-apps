@@ -44,11 +44,11 @@ const generateImgPath = (fileName: string): string => {
     <div class="mb-8">
     <div class="chat chat-start">
     <div class="chat-image avatar">
-        <div class="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-          <img src="~/assets/img/tarot_uranai_woman.png" />
-        </div>
+      <div class="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+        <img src="~/assets/img/tarot_uranai_woman.png" />
       </div>
-      <div class="chat-bubble">占いたい内容は何ですか？</div>
+    </div>
+    <div class="chat-bubble">占いたい内容は何ですか？</div>
     </div>
     <div v-for="userMessage, index in userHistory">
       <div  class="chat chat-end">
@@ -60,7 +60,7 @@ const generateImgPath = (fileName: string): string => {
               <img src="~/assets/img/tarot_uranai_woman.png" />
             </div>
         </div>
-        <div class="card card-side bg-base-300 shadow-xl">
+        <div class="card sm:card-side bg-base-300 shadow-xl">
           <figure class=""><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
           <div class="card-body">
             <h2 class="card-title">{{ promptHistory[index].card }}</h2>
@@ -70,6 +70,11 @@ const generateImgPath = (fileName: string): string => {
         </div>
       </div>
       <div v-else-if="pending" class="chat chat-start">
+      <div class="chat-image avatar">
+        <div class="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+          <img src="~/assets/img/tarot_uranai_woman.png" />
+        </div>
+      </div>
         <div class="chat-bubble flex justify-center items-center">
         <svg aria-hidden="true" class="w-5 h-5 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
