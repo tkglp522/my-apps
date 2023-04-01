@@ -15,7 +15,7 @@
         "@typescript-eslint/explicit-module-boundary-types": 0,
         "@typescript-eslint/no-unused-vars": 0,
         "vue/padding-line-between-blocks": ["error", "always"],
-        "vue/component-tags/order": ["error", {"order": ["script", "template", "style"]}],
-        "ignorePatterns": ["**/.nuxt/**", "**/.output/**", "**/node_modules/**"]
-    }
+        "vue/component-tags-order": ["error", {"order": ["script", "template", "style"]}]
+    },
+    "ignorePatterns": ["**/.nuxt/**", "**/.output/**", "**/node_modules/**"]
 }

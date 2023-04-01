@@ -1,30 +1,28 @@
-import { Configuration, OpenAIApi } from "openai";
+import { Configuration, OpenAIApi } from "openai"
 export default defineEventHandler(async (event) => {
-const body = await readBody(event)
+  const body = await readBody(event)
 
-const config = useRuntimeConfig();
-const configuration = new Configuration({
-  apiKey: config.API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
+  const config = useRuntimeConfig()
+  const configuration = new Configuration({
+    apiKey: config.API_KEY,
+  })
+  const openai = new OpenAIApi(configuration)
 
   if (!configuration.apiKey) {
-    return;
+    return
   }
 
-  const question = body.question || '';
+  const question = body.question || ""
 
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(question),
       temperature: 0.4,
-      max_tokens: 1000
-    });
-    return completion.data.choices[0].text;
-  } catch(error) {
-  }
+      max_tokens: 1000,
+    })
+    return completion.data.choices[0].text
+  } catch (error) {}
 })
 
 const generatePrompt = (question: string) => {
@@ -66,5 +64,5 @@ const generatePrompt = (question: string) => {
   カード:
   説明:
   答え:
-`;
+`
 }

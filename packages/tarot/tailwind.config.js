@@ -16,4 +16,3 @@ module.exports = {
     themes: ["synthwave"],
   },
 }
-

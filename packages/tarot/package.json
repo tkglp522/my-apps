@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "nuxt typecheck && eslint"
+    "lint": "nuxt typecheck && eslint --fix ."
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
