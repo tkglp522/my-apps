@@ -1,6 +1,13 @@
 <script setup lang="ts">
-const promptHistory = ref<Array<string | null>>([])
-const userHistory = ref<Array<string | null>>([])
+interface Result {
+  no: string,
+  card: string,
+  desc: string,
+  answer: string,
+}
+
+const promptHistory = ref<Array<Result>>([])
+const userHistory = ref<Array<string>>([])
 const message = ref<string>('')
 const pending = ref<boolean>(false)
 
@@ -16,10 +23,20 @@ const sendMessage = async () => {
     }
   })
   const data = await res.data.value
-  promptHistory.value.push(data)
+  const parsedData = typeof data === "string" ? JSON.parse(data): null
+  const result: Result = {
+    no: parsedData.no,
+    card: parsedData.card,
+    desc: parsedData.desc,
+    answer: parsedData.answer
+  }
+  promptHistory.value.push(result)
   pending.value = false
 }
 
+const generateImgPath = (fileName: string): string => {
+  return new URL(`../assets/img/${fileName}.webp`, import.meta.url).href
+}
 
 </script>
 <template>
@@ -43,11 +60,12 @@ const sendMessage = async () => {
               <img src="~/assets/img/tarot_uranai_woman.png" />
             </div>
         </div>
-        <div class="card card-side bg-base-200 shadow-xl">
-          <figure class="h-full"><img src="~/assets/img/the-high-priestess-tarot-card.webp" alt="Card"/></figure>
+        <div class="card card-side bg-base-300 shadow-xl">
+          <figure class=""><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
           <div class="card-body">
-            <h2 class="card-title">New movie is released!</h2>
-            <p>{{promptHistory[index]}}</p>
+            <h2 class="card-title">{{ promptHistory[index].card }}</h2>
+            <p>{{promptHistory[index].desc}}</p>
+            <p>{{promptHistory[index].answer}}</p>
           </div>
         </div>
       </div>
