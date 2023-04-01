@@ -2,7 +2,8 @@
 interface Result {
   no: string,
   card: string,
-  desc: string,
+  position: string,
+  explanation: string,
   answer: string,
 }
 
@@ -27,7 +28,8 @@ const sendMessage = async () => {
   const result: Result = {
     no: parsedData.no,
     card: parsedData.card,
-    desc: parsedData.desc,
+    position: parsedData.position,
+    explanation: parsedData.explanation,
     answer: parsedData.answer
   }
   promptHistory.value.push(result)
@@ -37,7 +39,6 @@ const sendMessage = async () => {
 const generateImgPath = (fileName: string): string => {
   return new URL(`../assets/img/${fileName}.webp`, import.meta.url).href
 }
-
 </script>
 <template>
 <div>
@@ -61,10 +62,11 @@ const generateImgPath = (fileName: string): string => {
             </div>
         </div>
         <div class="card sm:card-side bg-base-300 shadow-xl">
-          <figure class=""><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
+          <figure class="rotate-180" v-if="promptHistory[index].position == '逆位置'"><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
+          <figure v-else><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
           <div class="card-body">
-            <h2 class="card-title">{{ promptHistory[index].card }}</h2>
-            <p>{{promptHistory[index].desc}}</p>
+            <h2 class="card-title">{{ promptHistory[index].card }} 【{{ promptHistory[index].position }}】</h2>
+            <p>{{promptHistory[index].explanation}}</p>
             <p>{{promptHistory[index].answer}}</p>
           </div>
         </div>
