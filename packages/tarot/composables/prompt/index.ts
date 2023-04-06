@@ -1,1 +1,1 @@
-export * from '~/composables/prompt/requestTarotAnswer'
+export * from "~/composables/prompt/requestTarotAnswer"

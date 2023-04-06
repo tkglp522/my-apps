@@ -73,7 +73,7 @@ const generatePrompt = (question: string) => {
 
  ${question}
 
-回答は以下のようにjson形式でお願いします。
+回答は以下のように正確なjson形式でお願いします。
 
 {
   "no" <カードNo>,
