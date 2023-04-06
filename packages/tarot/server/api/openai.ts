@@ -15,20 +15,26 @@ export default defineEventHandler(async (event) => {
   const question = body.question || ""
 
   try {
-    const completion = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: generatePrompt(question),
-      temperature: 0.4,
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+      {
+        role: "system", content: "タロット占いの専門家として解答してください。"
+      },
+        {
+        role: "user", content: generatePrompt(question)
+        }
+      ],
+      temperature: 0.8,
       max_tokens: 1000,
     })
-    return completion.data.choices[0].text
+    return completion.data.choices[0].message
   } catch (error) {}
 })
 
 const generatePrompt = (question: string) => {
   return `
-あなたは占い師です。
-以下の22枚の大アルカナのみからなるタロットデッキから一枚ランダムに選出してください。
+以下の22枚の大アルカナのみからなるタロットデッキから一枚を選出してください。
 １枚のカードを引く確率は22分の１です。
   0：愚者、
   1：魔術師、
@@ -59,12 +65,14 @@ const generatePrompt = (question: string) => {
 
  ${question}
 
-以下のkeyを含むJSONフォーマットで出力すること
+回答は以下のようにjson形式でお願いします。
 
+{
   "no" <カードNo>,
   "card" <カード名>,
   "position" <選択したカードの位置>,
   "explanation" <選択した位置のカードの意味>,
   "answer" <質問に対する回答とその詳細>
+}
 `
 }

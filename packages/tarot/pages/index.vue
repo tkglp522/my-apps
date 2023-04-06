@@ -24,7 +24,8 @@ const sendMessage = async () => {
     }
   })
   const data = await res.data.value
-  const parsedData = typeof data === "string" ? JSON.parse(data): null
+  const parsedData = data ? JSON.parse(data.content) : null
+  if (!parsedData) return
   const result: Result = {
     no: parsedData.no,
     card: parsedData.card,
