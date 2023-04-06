@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
         role: "user", content: generatePrompt(question)
         }
       ],
-      temperature: 0.8,
+      temperature: 1,
       max_tokens: 1000,
     })
     return completion.data.choices[0].message
