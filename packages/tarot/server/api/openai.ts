@@ -29,7 +29,15 @@ export default defineEventHandler(async (event) => {
       max_tokens: 1000,
     })
     return completion.data.choices[0].message
-  } catch (error) {}
+  } catch (error: any) {
+    if (error.response) {
+      console.error(error.response.status, error.response.data);
+      return error.response.data;
+    } else {
+      console.error(`Error with OpenAI API request: ${error.message}`);
+      return 'An error occurred during your request.'
+    }
+  }
 })
 
 const generatePrompt = (question: string) => {
