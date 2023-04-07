@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRequestTarotAnswer} from '~/composables/prompt'
-const { promptHistory, userHistory, message, pending, sendMessage} = useRequestTarotAnswer()
+const { promptAnswer, userQuestion, message, successed, pending, isApiCalled, sendMessage, resetPrompt} = useRequestTarotAnswer()
 const generateImgPath = (fileName: string): string => {
   return new URL(`../assets/img/${fileName}.webp`, import.meta.url).href
 }
@@ -16,23 +16,23 @@ const generateImgPath = (fileName: string): string => {
     </div>
     <div class="chat-bubble">占いたい内容は何ですか？</div>
     </div>
-    <div v-for="userMessage, index in userHistory">
+    <div>
       <div  class="chat chat-end">
-        <div class="chat-bubble">{{ userMessage }}</div>
+        <div v-if="userQuestion && isApiCalled" class="chat-bubble">{{ userQuestion }}</div>
       </div>
-      <div v-if="promptHistory[index]" class="chat chat-start">
+      <div v-if="promptAnswer && successed" class="chat chat-start">
         <div class="chat-image avatar">
             <div class="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
               <img src="~/assets/img/tarot_uranai_woman.png" />
             </div>
         </div>
         <div class="card sm:card-side bg-base-300 shadow-xl">
-          <figure class="rotate-180" v-if="promptHistory[index].position == '逆位置'"><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
-          <figure v-else><img :src="generateImgPath(promptHistory[index].no)" alt="Card"/></figure>
+          <figure class="rotate-180" v-if="promptAnswer.position == '逆位置'"><img :src="generateImgPath(promptAnswer.no)" alt="Card"/></figure>
+          <figure v-else><img :src="generateImgPath(promptAnswer.no)" alt="Card"/></figure>
           <div class="card-body">
-            <h2 class="card-title">{{ promptHistory[index].card }} 【{{ promptHistory[index].position }}】</h2>
-            <p>{{promptHistory[index].explanation}}</p>
-            <p>{{promptHistory[index].answer}}</p>
+            <h2 class="card-title">{{ promptAnswer.card }} 【{{ promptAnswer.position }}】</h2>
+            <p>{{promptAnswer.explanation}}</p>
+            <p>{{promptAnswer.answer}}</p>
           </div>
         </div>
       </div>
@@ -49,9 +49,24 @@ const generateImgPath = (fileName: string): string => {
     </svg>
         <span>占い中...</span></div>
       </div>
+      <div v-else-if="!successed && !pending && isApiCalled" class="chat chat-start">
+      <div class="chat-image avatar">
+        <div class="w-10 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+          <img src="~/assets/img/tarot_uranai_woman.png" />
+        </div>
+      </div>
+        <div class="chat-bubble flex justify-center items-center">
+        <span>うまくいきませんでした。もう一度お願いします。</span></div>
+
+      </div>
     </div>
     </div>
-    <input v-model="message" type="text" placeholder="Type here" class="input input-bordered w-full mb-8" />
-    <button class="btn btn-primary w-full" @click="sendMessage" :disabled="pending">占う</button>
+    <div v-if="!successed">
+      <input v-model="message" type="text" placeholder="Type here" class="input input-bordered w-full mb-8" :disabled="pending" />
+      <button class="btn btn-primary w-full" @click="sendMessage" :disabled="pending">占う</button>
+    </div>
+    <div v-else>
+      <button class="btn btn-primary w-full" @click="resetPrompt" :disabled="pending">もう一度</button>
+    </div>
 </div>
 </template>

@@ -18,12 +18,14 @@ export default defineEventHandler(async (event) => {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-      {
-        role: "system", content: "タロット占いの専門家として解答してください。"
-      },
         {
-        role: "user", content: generatePrompt(question)
-        }
+          role: "system",
+          content: "タロット占いの専門家として解答してください。",
+        },
+        {
+          role: "user",
+          content: generatePrompt(question),
+        },
       ],
       temperature: 1,
       max_tokens: 1000,
@@ -31,11 +33,11 @@ export default defineEventHandler(async (event) => {
     return completion.data.choices[0].message
   } catch (error: any) {
     if (error.response) {
-      console.error(error.response.status, error.response.data);
-      return error.response.data;
+      console.error(error.response.status, error.response.data)
+      return error.response.data
     } else {
-      console.error(`Error with OpenAI API request: ${error.message}`);
-      return 'An error occurred during your request.'
+      console.error(`Error with OpenAI API request: ${error.message}`)
+      return "An error occurred during your request."
     }
   }
 })

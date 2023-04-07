@@ -9,11 +9,12 @@ interface Result {
 }
 
 export const useRequestTarotAnswer = () => {
-  const promptHistory = ref<Array<Result>>([])
-  const userHistory = ref<Array<string>>([])
+  const promptAnswer = ref<Result>()
+  const userQuestion = ref<string>()
   const message = ref<string>("")
   const pending = ref<boolean>(false)
-
+  const successed = ref<boolean>(false)
+  const isApiCalled = ref<boolean>(false)
   const isJsonString = (str: string): boolean => {
     try {
       JSON.parse(str)
@@ -24,11 +25,19 @@ export const useRequestTarotAnswer = () => {
     return true
   }
 
+  const resetPrompt = () => {
+    userQuestion.value = ""
+    successed.value = false
+    isApiCalled.value = false
+  }
+
   const sendMessage = async () => {
     const question = message.value
+    successed.value = false
     pending.value = true
-    userHistory.value.push(message.value)
+    userQuestion.value = message.value
     message.value = ""
+    isApiCalled.value = true
     const res = await useFetch("/api/openai", {
       method: "POST",
       body: {
@@ -39,7 +48,7 @@ export const useRequestTarotAnswer = () => {
     const parsedData = isJsonString(data.content) ? JSON.parse(data.content.trim()) : null
     if (!parsedData) {
       pending.value = false
-    //promptHistory.value.push(result)
+      successed.value = false
       return
     }
     const result: Result = {
@@ -49,8 +58,9 @@ export const useRequestTarotAnswer = () => {
       explanation: parsedData.explanation,
       answer: parsedData.answer,
     }
-    promptHistory.value.push(result)
+    promptAnswer.value = result
+    successed.value = true
     pending.value = false
   }
-  return { promptHistory, userHistory, message, pending, sendMessage }
+  return { promptAnswer, userQuestion, message, successed, pending, isApiCalled, sendMessage, resetPrompt }
 }
