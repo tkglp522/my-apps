@@ -32,7 +32,13 @@ export default defineEventHandler(async (event) => {
     })
     return completion.data.choices[0].message
   } catch (error: any) {
-    return
+    if (error.response) {
+      console.error(error.response.status, error.response.data)
+      return error.response.data
+    } else {
+      console.error(`Error with OpenAI API request: ${error.message}`)
+      return "An error occurred during your request."
+    }
   }
 })
 
