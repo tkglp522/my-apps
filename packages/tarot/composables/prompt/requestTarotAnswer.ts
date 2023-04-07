@@ -45,6 +45,11 @@ export const useRequestTarotAnswer = () => {
       },
     })
     const data = await res.data.value
+    if (!data) {
+      pending.value = false
+      successed.value = false
+      return
+    }
     const parsedData = isJsonString(data.content) ? JSON.parse(data.content.trim()) : null
     if (!parsedData) {
       pending.value = false
