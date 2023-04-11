@@ -1,5 +1,3 @@
-import sudokuGenPlugin from './plugins/sudoku-gen-plugin.client';
-
 export default defineNuxtConfig({
     css: ['~/assets/css/main.css'],
     postcss: {
@@ -7,8 +5,5 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  vite: {
-    plugins: [sudokuGenPlugin()],
   },
 })
