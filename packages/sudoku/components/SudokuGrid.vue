@@ -16,7 +16,7 @@
 
 <script>
 import { computed, ref } from 'vue';
-import Sudoku from 'sudoku-umd';
+import Sudoku from '~/sudoku';
 import { onMounted } from 'vue';
 
 export default {
