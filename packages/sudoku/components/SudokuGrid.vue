@@ -16,8 +16,12 @@
 
 <script>
 import { computed, ref } from 'vue';
-import { getSudoku } from 'sudoku-gen';
 import { onMounted } from 'vue';
+
+const getSudoku = async (difficulty) => {
+    const sudokuGenModule = await import('sudoku-gen');
+    return sudokuGenModule.getSudoku(difficulty);
+};
 
 export default {
     setup() {
@@ -28,14 +32,15 @@ export default {
 
         const cells = ref([]);
         const puzzle = ref('');
-const generatePuzzle = () => {
-  const generatedSudoku = getSudoku('easy');
-  puzzle.value = generatedSudoku.puzzle;
-  cells.value = generatedSudoku.puzzle.split("").map((cell, index) => ({
-    value: cell !== "-" ? parseInt(cell) : "",
-    readonly: cell !== "-",
-  }));
-};
+
+        const generatePuzzle = async () => {
+            const generatedSudoku = await getSudoku('easy');
+            puzzle.value = generatedSudoku.puzzle;
+            cells.value = generatedSudoku.puzzle.split("").map((cell, index) => ({
+                value: cell !== "-" ? parseInt(cell) : "",
+                readonly: cell !== "-",
+            }));
+        };
 
         const checkSolution = () => {
             const solution = Sudoku.solve(puzzle.value);
