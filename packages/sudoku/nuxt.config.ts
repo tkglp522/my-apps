@@ -1,5 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-import sudokuGenPlugin from './plugins/sudoku-gen-plugin';
+import { resolve } from 'path';
 
 export default defineNuxtConfig({
     css: ['~/assets/css/main.css'],
@@ -10,6 +9,10 @@ export default defineNuxtConfig({
     },
   },
   vite: {
-    plugins: [sudokuGenPlugin()],
+    resolve: {
+      alias: {
+        '@sudoku-gen': resolve(__dirname, './modules/sudoku-gen'),
+      },
+    },
   },
 })
