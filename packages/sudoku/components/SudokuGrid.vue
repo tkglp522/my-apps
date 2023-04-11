@@ -16,8 +16,8 @@
 
 <script>
 import { computed, ref } from 'vue';
-import { onMounted } from 'vue';
-import { getSudoku } from '@/modules/sudoku-gen';
+import { onMounted } from 'vue'
+import { getSudoku } from 'sudoku-gen';
 
 export default {
     setup() {
