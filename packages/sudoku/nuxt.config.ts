@@ -7,9 +7,4 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  build: {
-    rollupOptions: {
-      external: ['sudoku-gen'],
-    }
-  }
 })
