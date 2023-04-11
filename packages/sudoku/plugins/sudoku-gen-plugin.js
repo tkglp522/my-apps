@@ -9,8 +9,8 @@ export default function sudokuGenPlugin() {
     load(id) {
       if (id === 'sudoku-gen') {
         return `
-          import { getSudoku } from 'sudoku-gen';
-          export const getSudoku = getSudoku;
+          import * as sudokuGenModule from 'sudoku-gen';
+          export const { getSudoku } = sudokuGenModule;
         `;
       }
     },
