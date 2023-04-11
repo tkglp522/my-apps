@@ -16,8 +16,8 @@
 
 <script>
 import { computed, ref } from 'vue';
-import Sudoku from 'sudoku-umd';
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
+import { getSudoku } from 'sudoku-gen';
 
 export default {
     setup() {
@@ -29,13 +29,14 @@ export default {
         const cells = ref([]);
         const puzzle = ref('');
 
-        const generatePuzzle = () => {
-            puzzle.value = Sudoku.generate('medium');
-            cells.value = puzzle.value.split('').map((cell, index) => ({
-                value: cell !== '.' ? parseInt(cell) : '',
-                readonly: cell !== '.',
-            }));
-        };
+const generatePuzzle = () => {
+  const generatedSudoku = getSudoku('easy');
+  puzzle.value = generatedSudoku.puzzle;
+  cells.value = generatedSudoku.puzzle.split("").map((cell, index) => ({
+    value: cell !== "-" ? parseInt(cell) : "",
+    readonly: cell !== "-",
+  }));
+};
 
         const checkSolution = () => {
             const solution = Sudoku.solve(puzzle.value);
