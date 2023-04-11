@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import sudokuGenPlugin from './sudoku-gen-plugin';
+
 export default defineNuxtConfig({
     css: ['~/assets/css/main.css'],
     postcss: {
@@ -6,5 +8,8 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  vite: {
+    plugins: [sudokuGenPlugin()],
   },
 })
