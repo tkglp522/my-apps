@@ -13,12 +13,23 @@
               v-for="(cell, colIndex) in row"
               :key="colIndex"
               v-model.number="grid[rowIndex][colIndex]"
-              :class="`w-12 h-12 text-center ${readonlyCells[rowIndex][colIndex] ? 'font-bold' : ''} ${rowIndex % 3 === 2 ? 'border-b-2' : 'border'} ${colIndex % 3 === 2 ? 'border-r-2' : 'border'} border-gray-300`"
+              :class="`w-8 md:w-12 h-8 md:h-12 text-center ${readonlyCells[rowIndex][colIndex] ? 'font-bold' : ''} ${rowIndex % 3 === 2 ? 'border-b-2' : 'border'} ${colIndex % 3 === 2 ? 'border-r-2' : 'border'} border-gray-300`"
               :readonly="readonlyCells[rowIndex][colIndex]"
               @input="validateInput($event, rowIndex, colIndex)"
+              @click="selectCell(rowIndex, colIndex)"
             />
           </div>
         </div>
+        <div class="number-buttons flex flex-wrap justify-center mt-4 space-x-1 md:space-x-2">
+      <button
+        v-for="number in 9"
+        :key="number"
+        @click="insertNumber(number)"
+        class="w-9 md:w-12 h-9 md:h-12 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
+        {{ number }}
+      </button>
+    </div>
         <div class="flex flex-col mt-4 space-y-2">
       <button @click="generatePuzzle('easy')" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">New Easy Puzzle</button>
       <button @click="generatePuzzle('medium')" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">New Medium Puzzle</button>
@@ -37,6 +48,10 @@ export default {
         return {
             grid: [],
             readonlyCells: [],
+            selectedCell: {
+                row: null,
+                col: null,
+            },
             originalGrid: [],
             resultMessage: '',
             resultClass: '',
@@ -71,7 +86,17 @@ export default {
                 this.grid[row][col] = "";
             }
         },
-
+        selectCell(row, col) {
+            if (!this.readonlyCells[row][col]) {
+                this.selectedCell = { row, col };
+            }
+        },
+        insertNumber(number) {
+            if (this.selectedCell.row !== null && this.selectedCell.col !== null) {
+                this.grid[this.selectedCell.row][this.selectedCell.col] = number;
+                this.selectedCell = { row: null, col: null };
+            }
+        },
         checkSolution() {
             const solvedGrid = JSON.parse(JSON.stringify(this.originalGrid));
             solveSudoku(solvedGrid);
