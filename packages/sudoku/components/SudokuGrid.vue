@@ -10,7 +10,7 @@
               v-for="(cell, colIndex) in row"
               :key="colIndex"
               v-model.number="grid[rowIndex][colIndex]"
-              :class="`w-12 h-12 text-center border border-gray-300 ${readonlyCells[rowIndex][colIndex] ? 'font-bold' : ''}`"
+              :class="`w-12 h-12 text-center ${readonlyCells[rowIndex][colIndex] ? 'font-bold' : ''} ${rowIndex % 3 === 2 ? 'border-b-2' : 'border'} ${colIndex % 3 === 2 ? 'border-r-2' : 'border'} border-gray-300`"
               :readonly="readonlyCells[rowIndex][colIndex]"
               @input="validateInput($event, rowIndex, colIndex)"
             />
