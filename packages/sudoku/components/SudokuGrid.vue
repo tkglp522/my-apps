@@ -9,15 +9,15 @@
             :key="rowIndex"
             class="flex"
           >
-            <input
-              v-for="(cell, colIndex) in row"
-              :key="colIndex"
-              v-model.number="grid[rowIndex][colIndex]"
-              :class="`w-8 md:w-12 h-8 md:h-12 text-center ${readonlyCells[rowIndex][colIndex] ? 'font-bold' : ''} ${rowIndex % 3 === 2 ? 'border-b-2' : 'border'} ${colIndex % 3 === 2 ? 'border-r-2' : 'border'} border-gray-300`"
-              :readonly="readonlyCells[rowIndex][colIndex]"
-              @input="validateInput($event, rowIndex, colIndex)"
-              @click="selectCell(rowIndex, colIndex)"
-            />
+          <input
+      v-for="(cell, colIndex) in row"
+      :key="colIndex"
+      v-model.number="grid[rowIndex][colIndex]"
+      :class="`border ${selectedCell.row === rowIndex && selectedCell.col === colIndex ? 'bg-yellow-100' : ''}
+      w-8 md:w-12 h-8 md:h-12 text-center ${readonlyCells[rowIndex][colIndex] ? 'font-bold' : ''} ${rowIndex % 3 === 2 ? 'border-b-2' : 'border'} ${colIndex % 3 === 2 ? 'border-r-2' : 'border'} border-gray-300`"
+      readonly
+      @click="selectCell(rowIndex, colIndex)"
+    />
           </div>
         </div>
         <div class="number-buttons flex flex-wrap justify-center mt-4 space-x-1 md:space-x-2">
@@ -94,7 +94,7 @@ export default {
         insertNumber(number) {
             if (this.selectedCell.row !== null && this.selectedCell.col !== null) {
                 this.grid[this.selectedCell.row][this.selectedCell.col] = number;
-                this.selectedCell = { row: null, col: null };
+                this.validateInput({ target: { value: number } }, this.selectedCell.row, this.selectedCell.col);
             }
         },
         checkSolution() {
@@ -155,3 +155,12 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+input[readonly] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+</style>
