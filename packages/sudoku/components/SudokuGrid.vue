@@ -64,6 +64,8 @@ export default {
 
     methods: {
         generatePuzzle(difficulty) {
+            this.resultMessage =  ''
+            this.resultClass = ''
             this.grid = generatePuzzle(difficulty);
             this.originalGrid = JSON.parse(JSON.stringify(this.grid));
             this.eraseCells(difficulty);
@@ -145,6 +147,8 @@ export default {
         },
 
         resetInputs() {
+            this.resultMessage =  ''
+            this.resultClass = ''
             this.grid = this.grid.map((row, rowIndex) => {
                 return row.map((cell, colIndex) => {
                     return this.readonlyCells[rowIndex][colIndex] ? cell : '';
