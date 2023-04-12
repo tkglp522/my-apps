@@ -1,4 +1,7 @@
 <template>
+       <div class="result-message flex justify-center mb-4" :class="resultClass">
+        {{ resultMessage }}
+      </div>
       <div class="flex flex-col items-center">
         <div class="flex flex-col items-center">
           <div
@@ -20,7 +23,6 @@
       <button @click="generatePuzzle('easy')" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">New Easy Puzzle</button>
       <button @click="generatePuzzle('medium')" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">New Medium Puzzle</button>
       <button @click="generatePuzzle('hard')" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">New Hard Puzzle</button>
-      <button @click="checkSolution" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">Check Solution</button>
       <button @click="resetInputs" class="px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300">Reset Input</button>
     </div>
   </div>
@@ -35,7 +37,9 @@ export default {
         return {
             grid: [],
             readonlyCells: [],
-
+            originalGrid: [],
+            resultMessage: '',
+            resultClass: '',
         };
     },
 
@@ -46,6 +50,7 @@ export default {
     methods: {
         generatePuzzle(difficulty) {
             this.grid = generatePuzzle(difficulty);
+            this.originalGrid = JSON.parse(JSON.stringify(this.grid));
             this.eraseCells(difficulty);
             this.readonlyCells = this.grid.map(row => row.map(cell => cell !== ""));
         },
@@ -68,15 +73,30 @@ export default {
         },
 
         checkSolution() {
-            const solutionGrid = JSON.parse(JSON.stringify(this.grid));
-            const isSolved = solveSudoku(solutionGrid);
+            const solvedGrid = JSON.parse(JSON.stringify(this.originalGrid));
+            solveSudoku(solvedGrid);
+            let isCorrect = true;
 
-            if (isSolved) {
-                // The puzzle is solved correctly
-                console.log("Congratulations! The solution is correct.");
+
+            // Compare the user-filled grid with the solved grid
+            for (let row = 0; row < 9; row++) {
+                for (let col = 0; col < 9; col++) {
+                    if (this.grid[row][col] !== solvedGrid[row][col]) {
+                        isCorrect = false;
+                        break;
+                    }
+                }
+                if (!isCorrect) break;
+            }
+
+            if (isCorrect) {
+                // The solution is correct
+                this.resultMessage = "Congratulations! The solution is correct.";
+                this.resultClass = "text-green-600";
             } else {
-                // The puzzle is not solved correctly
-                console.log("The solution is incorrect. Please try again.");
+                // The solution is incorrect
+                this.resultMessage = "The solution is incorrect. Please try again.";
+                this.resultClass = "text-red-600";
             }
         },
 
@@ -87,6 +107,16 @@ export default {
             } else {
                 this.grid[rowIndex][colIndex] = value;
             }
+            let filledCells = 0;
+            for (const row of this.grid) {
+                for (const cell of row) {
+                    if (cell !== "") filledCells++;
+                    }
+            }
+
+            if (filledCells === 81) {
+                    this.checkSolution();
+                }
         },
 
         resetInputs() {
