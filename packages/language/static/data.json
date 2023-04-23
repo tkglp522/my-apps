@@ -1,0 +1,152 @@
+{
+  "__v_isShallow": false,
+  "dep": {
+    "w": 0,
+    "n": 0
+  },
+  "__v_isRef": true,
+  "_rawValue": [
+    {
+      "word": "你好",
+      "pronounce": "nǐ hǎo",
+      "meaning": "こんにちは",
+      "sentence": "你好，我叫李明。",
+      "sentence_meaning": "こんにちは、私は李明です。"
+    },
+    {
+      "word": "谢谢",
+      "pronounce": "xiè xiè",
+      "meaning": "ありがとう",
+      "sentence": "谢谢你的帮助。",
+      "sentence_meaning": "あなたの助けに感謝します。"
+    },
+    {
+      "word": "对不起",
+      "pronounce": "duì bù qǐ",
+      "meaning": "ごめんなさい",
+      "sentence": "对不起，我迟到了。",
+      "sentence_meaning": "すみません、遅れました。"
+    },
+    {
+      "word": "早上好",
+      "pronounce": "zǎo shàng hǎo",
+      "meaning": "おはようございます",
+      "sentence": "早上好，你吃早饭了吗？",
+      "sentence_meaning": "おはようございます、朝ごはんは食べましたか？"
+    },
+    {
+      "word": "晚上好",
+      "pronounce": "wǎn shàng hǎo",
+      "meaning": "こんばんは",
+      "sentence": "晚上好，你吃晚饭了吗？",
+      "sentence_meaning": "こんばんは、夕食は食べましたか？"
+    },
+    {
+      "word": "再见",
+      "pronounce": "zài jiàn",
+      "meaning": "さようなら",
+      "sentence": "明天见，再见！",
+      "sentence_meaning": "明日お会いしましょう、さようなら！"
+    },
+    {
+      "word": "电话",
+      "pronounce": "diàn huà",
+      "meaning": "電話",
+      "sentence": "请问你的电话号码是多少？",
+      "sentence_meaning": "電話番号をお伺いしてもよろしいですか？"
+    },
+    {
+      "word": "名字",
+      "pronounce": "míng zì",
+      "meaning": "名前",
+      "sentence": "请问你叫什么名字？",
+      "sentence_meaning": "お名前は何ですか？"
+    },
+    {
+      "word": "学校",
+      "pronounce": "xué xiào",
+      "meaning": "学校",
+      "sentence": "我每天去学校上课。",
+      "sentence_meaning": "私は毎日学校に通って授業を受けます。"
+    },
+    {
+      "word": "家",
+      "pronounce": "jiā",
+      "meaning": "家",
+      "sentence": "我和我的家人一起生活。",
+      "sentence_meaning": "私は家族と一緒に生活しています。"
+    }
+  ],
+  "_value": [
+    {
+      "word": "你好",
+      "pronounce": "nǐ hǎo",
+      "meaning": "こんにちは",
+      "sentence": "你好，我叫李明。",
+      "sentence_meaning": "こんにちは、私は李明です。"
+    },
+    {
+      "word": "谢谢",
+      "pronounce": "xiè xiè",
+      "meaning": "ありがとう",
+      "sentence": "谢谢你的帮助。",
+      "sentence_meaning": "あなたの助けに感謝します。"
+    },
+    {
+      "word": "对不起",
+      "pronounce": "duì bù qǐ",
+      "meaning": "ごめんなさい",
+      "sentence": "对不起，我迟到了。",
+      "sentence_meaning": "すみません、遅れました。"
+    },
+    {
+      "word": "早上好",
+      "pronounce": "zǎo shàng hǎo",
+      "meaning": "おはようございます",
+      "sentence": "早上好，你吃早饭了吗？",
+      "sentence_meaning": "おはようございます、朝ごはんは食べましたか？"
+    },
+    {
+      "word": "晚上好",
+      "pronounce": "wǎn shàng hǎo",
+      "meaning": "こんばんは",
+      "sentence": "晚上好，你吃晚饭了吗？",
+      "sentence_meaning": "こんばんは、夕食は食べましたか？"
+    },
+    {
+      "word": "再见",
+      "pronounce": "zài jiàn",
+      "meaning": "さようなら",
+      "sentence": "明天见，再见！",
+      "sentence_meaning": "明日お会いしましょう、さようなら！"
+    },
+    {
+      "word": "电话",
+      "pronounce": "diàn huà",
+      "meaning": "電話",
+      "sentence": "请问你的电话号码是多少？",
+      "sentence_meaning": "電話番号をお伺いしてもよろしいですか？"
+    },
+    {
+      "word": "名字",
+      "pronounce": "míng zì",
+      "meaning": "名前",
+      "sentence": "请问你叫什么名字？",
+      "sentence_meaning": "お名前は何ですか？"
+    },
+    {
+      "word": "学校",
+      "pronounce": "xué xiào",
+      "meaning": "学校",
+      "sentence": "我每天去学校上课。",
+      "sentence_meaning": "私は毎日学校に通って授業を受けます。"
+    },
+    {
+      "word": "家",
+      "pronounce": "jiā",
+      "meaning": "家",
+      "sentence": "我和我的家人一起生活。",
+      "sentence_meaning": "私は家族と一緒に生活しています。"
+    }
+  ]
+}

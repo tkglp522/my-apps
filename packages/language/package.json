@@ -1,0 +1,35 @@
+{
+  "name": "language",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "nuxt typecheck && eslint --fix ."
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^2.51.5",
+    "nuxt": "^3.3.2",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
+  },
+  "description": "Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^3.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkglp522/my-apps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tkglp522/my-apps/issues"
+  },
+  "homepage": "https://github.com/tkglp522/my-apps#readme"
+}

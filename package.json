@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "packages/tarot"
+    "packages/tarot",
+    "packages/language"
   ],
   "devDependencies": {
     "@types/node": "^18.15.11",
