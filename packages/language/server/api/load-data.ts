@@ -4,22 +4,14 @@ import path from 'path'
 export default defineEventHandler(async (event) => {
     const req = event.node.req
     const res = event.node.res
-    if (req.method === 'POST') {
-    try {
-      const data = await new Promise<string>((resolve, reject) => {
-        let body = ''
-        req.on('data', chunk => {
-          body += chunk
-        })
-        req.on('end', () => resolve(body))
-        req.on('error', err => reject(err))
-      })
-
+    if (req.method === 'GET') {
+        try {
       const filePath = path.join(process.cwd(), 'assets/json/data.json')
-      fs.writeFile(filePath, data)
+      const data = fs.readFile(filePath, 'utf8')
       res.writeHead(200, { 'Content-Type': 'application/json' })
-      res.end(JSON.stringify({ success: true }))
+      res.end(data)
     } catch (error: any) {
+      console.error('Error reading data.json:', error)
       res.writeHead(500, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({ success: false, error: error.message }))
     }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useRequestTarotAnswer} from '~/composables/prompt'
-const { promptAnswer, userQuestion, message, status, sendMessage, resetPrompt} = useRequestTarotAnswer()
+import { useRequestWordList} from '~/composables/prompt'
+const { promptAnswer, userQuestion, message, status, sendMessage, resetPrompt} = useRequestWordList()
 const exportJsonData = async () => {
    const json = JSON.stringify(promptAnswer, null, 2)
    try {
@@ -34,7 +34,7 @@ const exportJsonData = async () => {
         <img src="~/assets/img/tarot_uranai_woman.png" />
       </div>
     </div>
-    <div class="chat-bubble">何の言語を学びたいですか？</div>
+    <div class="chat-bubble">どこに旅行に行きますか</div>
     </div>
     <div>
       <div  class="chat chat-end">
@@ -68,7 +68,7 @@ const exportJsonData = async () => {
     </div>
     <div v-if="status != 'success'">
       <input v-model="message" type="text" placeholder="Type here" class="input input-bordered w-full mb-8" :disabled="status == 'pending'" />
-      <button class="btn btn-primary w-full" @click="sendMessage" :disabled="status == 'pending'">プラン作成</button>
+      <button class="btn btn-primary w-full" @click="sendMessage" :disabled="status == 'pending'">フレーズを生成する</button>
     </div>
     <div v-else>
       <button class="btn btn-primary w-full" @click="resetPrompt">もう一度</button>
@@ -76,7 +76,7 @@ const exportJsonData = async () => {
    <div v-if="status == 'success'">
     <h1>単語リスト</h1>
     <WordList :wordList="promptAnswer" />
-    <button class="btn btn-primary w-full" @click="exportJsonData">単語リストを保存する</button>
+    <button class="btn btn-primary w-full" @click="exportJsonData">フレーズを学習する</button>
   </div>
 </div>
 </template>

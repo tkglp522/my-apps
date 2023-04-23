@@ -1,0 +1,422 @@
+{
+  "__v_isShallow": false,
+  "dep": {
+    "w": 0,
+    "n": 0
+  },
+  "__v_isRef": true,
+  "_rawValue": [
+    {
+      "phrase": "Olá",
+      "pronounce": "オーラ",
+      "meaning": "こんにちは"
+    },
+    {
+      "phrase": "Tudo bem?",
+      "pronounce": "トゥードゥベン",
+      "meaning": "お元気ですか？"
+    },
+    {
+      "phrase": "Obrigado(a)",
+      "pronounce": "オブリガドゥ(オブリガダ)",
+      "meaning": "ありがとう"
+    },
+    {
+      "phrase": "Por favor",
+      "pronounce": "ポルファヴォル",
+      "meaning": "お願いします"
+    },
+    {
+      "phrase": "Com licença",
+      "pronounce": "コムリセンサ",
+      "meaning": "すみません"
+    },
+    {
+      "phrase": "Desculpe",
+      "pronounce": "デスクルペ",
+      "meaning": "ごめんなさい"
+    },
+    {
+      "phrase": "Sim",
+      "pronounce": "シン",
+      "meaning": "はい"
+    },
+    {
+      "phrase": "Não",
+      "pronounce": "ナン",
+      "meaning": "いいえ"
+    },
+    {
+      "phrase": "Meu nome é...",
+      "pronounce": "メウノミエーエ",
+      "meaning": "私の名前は…です"
+    },
+    {
+      "phrase": "Eu não falo português",
+      "pronounce": "エウナオファロポルトゥゲーズ",
+      "meaning": "私はポルトガル語が話せません"
+    },
+    {
+      "phrase": "Você fala inglês?",
+      "pronounce": "ヴォセファライングレス?",
+      "meaning": "あなたは英語が話せますか？"
+    },
+    {
+      "phrase": "Eu não entendo",
+      "pronounce": "エウナオエンテンドゥ",
+      "meaning": "わかりません"
+    },
+    {
+      "phrase": "Quanto custa?",
+      "pronounce": "クァントゥクスタ?",
+      "meaning": "いくらですか？"
+    },
+    {
+      "phrase": "Onde fica...?",
+      "pronounce": "オンジフィカ...?",
+      "meaning": "...はどこですか？"
+    },
+    {
+      "phrase": "Estou perdido(a)",
+      "pronounce": "エストウペルディドゥ(エストウペルディダ)",
+      "meaning": "道に迷っています"
+    },
+    {
+      "phrase": "Gostaria de...",
+      "pronounce": "ゴスタリアジ...",
+      "meaning": "…が欲しいです"
+    },
+    {
+      "phrase": "Posso pagar com cartão?",
+      "pronounce": "ポッソパガールコムカルタン?",
+      "meaning": "クレジットカードで支払えますか？"
+    },
+    {
+      "phrase": "Onde posso encontrar um banco?",
+      "pronounce": "オンジポッソエンコントラールバンク?",
+      "meaning": "どこで銀行を見つけられますか？"
+    },
+    {
+      "phrase": "Onde posso encontrar um restaurante?",
+      "pronounce": "オンジポッソエンコントラールレストランチ?",
+      "meaning": "どこでレストランを見つけられますか？"
+    },
+    {
+      "phrase": "Onde posso encontrar um banheiro?",
+      "pronounce": "オンジポッソエンコントラールバニェイロ?",
+      "meaning": "どこでトイレを見つけられますか？"
+    },
+    {
+      "phrase": "Eu gostaria de fazer uma reserva",
+      "pronounce": "エウゴスタリアジデファゼールウマレゼルバ",
+      "meaning": "予約をしたいです"
+    },
+    {
+      "phrase": "Qual é o horário de funcionamento?",
+      "pronounce": "クアリーオオラリオジデファンシオナメント?",
+      "meaning": "営業時間は何時から何時までですか？"
+    },
+    {
+      "phrase": "Qual é o preço?",
+      "pronounce": "クアリーオプレソ?",
+      "meaning": "値段はいくらですか？"
+    },
+    {
+      "phrase": "Eu gostaria de alugar um carro",
+      "pronounce": "エウゴスタリアジジアルガールウムカロ",
+      "meaning": "車を借りたいです"
+    },
+    {
+      "phrase": "Eu gostaria de comprar um bilhete",
+      "pronounce": "エウゴスタリアジジコンプラールウムビリェテ",
+      "meaning": "チケットを買いたいです"
+    },
+    {
+      "phrase": "Qual é a melhor forma de chegar lá?",
+      "pronounce": "クアリーアメリョールフォルマジデシャガールラ?",
+      "meaning": "そこに行くのに最適な方法は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de visitar...",
+      "pronounce": "エウゴスタリアジデヴィジタール...",
+      "meaning": "…を訪れたいです"
+    },
+    {
+      "phrase": "Qual é a atração turística mais popular?",
+      "pronounce": "クアリーアアトラソントゥリスティカメイスポプラール?",
+      "meaning": "最も人気のある観光スポットは何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de experimentar a comida local",
+      "pronounce": "エウゴスタリアジデエクスペリメンタラクムイダローカル",
+      "meaning": "地元の食べ物を試してみたいです"
+    },
+    {
+      "phrase": "Qual é o prato típico da região?",
+      "pronounce": "クアリーオプラトゥティピコダレジオン?",
+      "meaning": "その地域の代表的な料理は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de uma mesa para...",
+      "pronounce": "エウゴスタリアジデウマメーザパラ...",
+      "meaning": "…人のテーブルを予約したいです"
+    },
+    {
+      "phrase": "Eu gostaria de um quarto para...",
+      "pronounce": "エウゴスタリアジデウムクァルトゥパラ...",
+      "meaning": "…人の部屋を予約したいです"
+    },
+    {
+      "phrase": "Qual é o número de telefone?",
+      "pronounce": "クアリーオヌメロジデレフォネ?",
+      "meaning": "電話番号は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de cancelar a reserva",
+      "pronounce": "エウゴスタリアジデカンセララレゼルバ",
+      "meaning": "予約をキャンセルしたいです"
+    },
+    {
+      "phrase": "Qual é a estação de trem mais próxima?",
+      "pronounce": "クアリーアエスタソンジデトレンメイスノシュ?",
+      "meaning": "最寄りの駅はどこですか？"
+    },
+    {
+      "phrase": "Qual é o próximo ônibus para...?",
+      "pronounce": "クアリーオプロキシモオニブスパラ...?",
+      "meaning": "...行きの次のバスは何時ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de um mapa da cidade",
+      "pronounce": "エウゴスタリアジデウムマパダシダージ",
+      "meaning": "市内地図が欲しいです"
+    },
+    {
+      "phrase": "Qual é o clima hoje?",
+      "pronounce": "クアリーオクリマオジ?",
+      "meaning": "今日の天気はどうですか？"
+    },
+    {
+      "phrase": "Eu gostaria de comprar lembranças",
+      "pronounce": "エウゴスタリアジデコンプラールレンブランサス",
+      "meaning": "お土産を買いたいです"
+    },
+    {
+      "phrase": "Qual é a moeda local?",
+      "pronounce": "クアリーアモエダローカル?",
+      "meaning": "現地通貨は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de trocar dinheiro",
+      "pronounce": "エウゴスタリアジデトロカールディネイロ",
+      "meaning": "お金を両替したいです"
+    }
+  ],
+  "_value": [
+    {
+      "phrase": "Olá",
+      "pronounce": "オーラ",
+      "meaning": "こんにちは"
+    },
+    {
+      "phrase": "Tudo bem?",
+      "pronounce": "トゥードゥベン",
+      "meaning": "お元気ですか？"
+    },
+    {
+      "phrase": "Obrigado(a)",
+      "pronounce": "オブリガドゥ(オブリガダ)",
+      "meaning": "ありがとう"
+    },
+    {
+      "phrase": "Por favor",
+      "pronounce": "ポルファヴォル",
+      "meaning": "お願いします"
+    },
+    {
+      "phrase": "Com licença",
+      "pronounce": "コムリセンサ",
+      "meaning": "すみません"
+    },
+    {
+      "phrase": "Desculpe",
+      "pronounce": "デスクルペ",
+      "meaning": "ごめんなさい"
+    },
+    {
+      "phrase": "Sim",
+      "pronounce": "シン",
+      "meaning": "はい"
+    },
+    {
+      "phrase": "Não",
+      "pronounce": "ナン",
+      "meaning": "いいえ"
+    },
+    {
+      "phrase": "Meu nome é...",
+      "pronounce": "メウノミエーエ",
+      "meaning": "私の名前は…です"
+    },
+    {
+      "phrase": "Eu não falo português",
+      "pronounce": "エウナオファロポルトゥゲーズ",
+      "meaning": "私はポルトガル語が話せません"
+    },
+    {
+      "phrase": "Você fala inglês?",
+      "pronounce": "ヴォセファライングレス?",
+      "meaning": "あなたは英語が話せますか？"
+    },
+    {
+      "phrase": "Eu não entendo",
+      "pronounce": "エウナオエンテンドゥ",
+      "meaning": "わかりません"
+    },
+    {
+      "phrase": "Quanto custa?",
+      "pronounce": "クァントゥクスタ?",
+      "meaning": "いくらですか？"
+    },
+    {
+      "phrase": "Onde fica...?",
+      "pronounce": "オンジフィカ...?",
+      "meaning": "...はどこですか？"
+    },
+    {
+      "phrase": "Estou perdido(a)",
+      "pronounce": "エストウペルディドゥ(エストウペルディダ)",
+      "meaning": "道に迷っています"
+    },
+    {
+      "phrase": "Gostaria de...",
+      "pronounce": "ゴスタリアジ...",
+      "meaning": "…が欲しいです"
+    },
+    {
+      "phrase": "Posso pagar com cartão?",
+      "pronounce": "ポッソパガールコムカルタン?",
+      "meaning": "クレジットカードで支払えますか？"
+    },
+    {
+      "phrase": "Onde posso encontrar um banco?",
+      "pronounce": "オンジポッソエンコントラールバンク?",
+      "meaning": "どこで銀行を見つけられますか？"
+    },
+    {
+      "phrase": "Onde posso encontrar um restaurante?",
+      "pronounce": "オンジポッソエンコントラールレストランチ?",
+      "meaning": "どこでレストランを見つけられますか？"
+    },
+    {
+      "phrase": "Onde posso encontrar um banheiro?",
+      "pronounce": "オンジポッソエンコントラールバニェイロ?",
+      "meaning": "どこでトイレを見つけられますか？"
+    },
+    {
+      "phrase": "Eu gostaria de fazer uma reserva",
+      "pronounce": "エウゴスタリアジデファゼールウマレゼルバ",
+      "meaning": "予約をしたいです"
+    },
+    {
+      "phrase": "Qual é o horário de funcionamento?",
+      "pronounce": "クアリーオオラリオジデファンシオナメント?",
+      "meaning": "営業時間は何時から何時までですか？"
+    },
+    {
+      "phrase": "Qual é o preço?",
+      "pronounce": "クアリーオプレソ?",
+      "meaning": "値段はいくらですか？"
+    },
+    {
+      "phrase": "Eu gostaria de alugar um carro",
+      "pronounce": "エウゴスタリアジジアルガールウムカロ",
+      "meaning": "車を借りたいです"
+    },
+    {
+      "phrase": "Eu gostaria de comprar um bilhete",
+      "pronounce": "エウゴスタリアジジコンプラールウムビリェテ",
+      "meaning": "チケットを買いたいです"
+    },
+    {
+      "phrase": "Qual é a melhor forma de chegar lá?",
+      "pronounce": "クアリーアメリョールフォルマジデシャガールラ?",
+      "meaning": "そこに行くのに最適な方法は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de visitar...",
+      "pronounce": "エウゴスタリアジデヴィジタール...",
+      "meaning": "…を訪れたいです"
+    },
+    {
+      "phrase": "Qual é a atração turística mais popular?",
+      "pronounce": "クアリーアアトラソントゥリスティカメイスポプラール?",
+      "meaning": "最も人気のある観光スポットは何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de experimentar a comida local",
+      "pronounce": "エウゴスタリアジデエクスペリメンタラクムイダローカル",
+      "meaning": "地元の食べ物を試してみたいです"
+    },
+    {
+      "phrase": "Qual é o prato típico da região?",
+      "pronounce": "クアリーオプラトゥティピコダレジオン?",
+      "meaning": "その地域の代表的な料理は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de uma mesa para...",
+      "pronounce": "エウゴスタリアジデウマメーザパラ...",
+      "meaning": "…人のテーブルを予約したいです"
+    },
+    {
+      "phrase": "Eu gostaria de um quarto para...",
+      "pronounce": "エウゴスタリアジデウムクァルトゥパラ...",
+      "meaning": "…人の部屋を予約したいです"
+    },
+    {
+      "phrase": "Qual é o número de telefone?",
+      "pronounce": "クアリーオヌメロジデレフォネ?",
+      "meaning": "電話番号は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de cancelar a reserva",
+      "pronounce": "エウゴスタリアジデカンセララレゼルバ",
+      "meaning": "予約をキャンセルしたいです"
+    },
+    {
+      "phrase": "Qual é a estação de trem mais próxima?",
+      "pronounce": "クアリーアエスタソンジデトレンメイスノシュ?",
+      "meaning": "最寄りの駅はどこですか？"
+    },
+    {
+      "phrase": "Qual é o próximo ônibus para...?",
+      "pronounce": "クアリーオプロキシモオニブスパラ...?",
+      "meaning": "...行きの次のバスは何時ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de um mapa da cidade",
+      "pronounce": "エウゴスタリアジデウムマパダシダージ",
+      "meaning": "市内地図が欲しいです"
+    },
+    {
+      "phrase": "Qual é o clima hoje?",
+      "pronounce": "クアリーオクリマオジ?",
+      "meaning": "今日の天気はどうですか？"
+    },
+    {
+      "phrase": "Eu gostaria de comprar lembranças",
+      "pronounce": "エウゴスタリアジデコンプラールレンブランサス",
+      "meaning": "お土産を買いたいです"
+    },
+    {
+      "phrase": "Qual é a moeda local?",
+      "pronounce": "クアリーアモエダローカル?",
+      "meaning": "現地通貨は何ですか？"
+    },
+    {
+      "phrase": "Eu gostaria de trocar dinheiro",
+      "pronounce": "エウゴスタリアジデトロカールディネイロ",
+      "meaning": "お金を両替したいです"
+    }
+  ]
+}

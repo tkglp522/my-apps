@@ -27,8 +27,8 @@ export default defineEventHandler(async (event) => {
           content: generatePrompt(language),
         },
       ],
-      temperature: 1,
-      max_tokens: 1000,
+      temperature: 0.2,
+      max_tokens:3800 ,
     })
     return completion.data.choices[0].message
   } catch (error: any) {
@@ -44,19 +44,16 @@ export default defineEventHandler(async (event) => {
 
 const generatePrompt = (language: string) => {
   return `
+ユーザーは ${language}への旅行を計画しています。
+旅行で役に立つ40のフレーズのリストを作成してください。
 
- ${language}を学ぶための単語リストをトークン制限が許す限り作成してください。
- ユーザーは初学者の想定です。
-
-それぞれの単語は以下のようなオブジェクト形式記述し、全てのオブジェクトを単一の配列に格納し、json形式で返答をしてください。
+それぞれのフレーズは以下のようなオブジェクト形式記述し、全てのオブジェクトを単一の配列に格納し、json形式で返答をしてください。
 
 ### オブジェクト形式
 {
-  "word" <単語の綴り>,
-  "pronounce" <発音記号>,
-  "meaning" <単語の日本語での意味>,
-  "sentence" <単語を使った例文>,
-  "sentence_meaning" <例文の日本語訳>,
+  "phrase" <フレーズ>,
+  "pronounce" <カタカナで発音を記述>,
+  "meaning" <単語の日本語での意味>
 }
 `
 }

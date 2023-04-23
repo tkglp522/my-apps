@@ -9,7 +9,7 @@
       </div>
       <template v-for="(item, index) in wordList" :key="index">
         <div class="text-sm font-medium text-gray-300">
-          {{ item.word }}
+          {{ item.phrase }}
         </div>
         <div class="text-sm text-gray-300">
           {{ item.meaning }}

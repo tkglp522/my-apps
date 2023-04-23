@@ -8,18 +8,8 @@
                     </nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link class="hover:text-blue-400" to="/words">
-                        Words
-                    </nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link class="hover:text-blue-400" to="/word-quiz">
-                        Word Quiz
-                    </nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link class="hover:text-blue-400" to="/sentence-quiz">
-                        Sentence Quiz
+                    <nuxt-link class="hover:text-blue-400" to="/phrases">
+                        Phrases
                     </nuxt-link>
                 </li>
             </ul>

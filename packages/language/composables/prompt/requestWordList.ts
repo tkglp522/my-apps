@@ -1,14 +1,12 @@
 import { ref } from "#imports"
 
 interface Word {
-  word: string
+  phrase: string
   pronounce: string
   meaning: string
-  sentence: string
-  sentence_meaning: string
 }
 
-export const useRequestTarotAnswer = () => {
+export const useRequestWordList = () => {
   const promptAnswer = ref<Word[]>()
   const userQuestion = ref<string>()
   const message = ref<string>("")
@@ -44,9 +42,11 @@ export const useRequestTarotAnswer = () => {
       status.value = "failure"
       return
     }
+    console.log(data)
     const startIndex = data.content.indexOf('[');
     const endIndex = data.content.lastIndexOf(']') + 1;
     const jsonString = data.content.substring(startIndex, endIndex);
+    console.log(jsonString)
     const jsonData = JSON.parse(jsonString);
     const wordList: Word[] = []
     jsonData.forEach((elem: Word) => {
